@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    scroll-behavior: smooth;
+    border-radius: inherit;
+    
+}
+
+::-webkit-scrollbar-track{
+    border-radius: inherit;
+    margin-block: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    border-radius: inherit;
+    border: 3px solid #e2e2e2;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    height: 100vh;
+}
+
+.imgContainer{
+    width: 95%;
+    
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 30px 40px;
+    height: 50%;
+    background-image: linear-gradient(rgba(18, 16, 16, 0.1), rgba(4, 89, 46, 0.8)),url("./headbg.jpg");
+    background-size: cover;
+}
+.imgContainer img{
+    width: 100%;
+}
+
+/* TO DO List */
+
+.main{
+    width: 50%;
+    border-radius: 22px;
+    margin: 0 60px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    
+}
+
+.upper{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.upper button{
+    background-color: #367bf5;
+    padding: 6px 14px;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px black;
+    transition: 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.upper button:hover{
+    background-color: #0a64ff;
+    cursor: pointer;
+}
+.upper h3{
+    color: white;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    text-shadow: 0px 0px 6px black;
+}
+
+.taskList{
+    background-color: white;
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 2px 2px 8px black;
+    height: fit-content;
+    box-shadow: 0px 0px 10px black;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.task{
+    border-bottom: 1px solid rgb(209, 209, 209);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    transition: 0.1s;
+}
+
+.task:hover{
+    background-color: rgb(227, 227, 227);
+    border-radius: 16px;
+    border: none;
+}
+
+.taskDetails h4{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.taskDetails p{
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.deleteButton{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: red;
+    padding: 0px 10px;
+    transition: 0.2s;
+}
+
+.deleteButton img{
+    transition: 0.1s;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+.deleteButton img:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px black;
+}
+
+
+.priorityMark{
+    
+    font-size: 9px;
+    margin: 0 20px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Popup for adding task */
+
+.popupTODO{
+    background: white;
+    width: fit-content;
+    padding: 20px 50px;
+    border-radius: 18px;
+    position: absolute;
+    top: 80%;
+    left: 42%;
+    width: 400px;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0px 0px 15px black;
+}
+
+.todoName{
+    margin: 6px 50px;
+}
+.Description{
+    margin: 6px 50px;
+}
+.todoPriority{
+    margin: 6px 50px; 
+}
+
+#todoName{
+    padding: 10px 20px;
+    background-color: #dcb4ff;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid #bf76ff;
+}
+#todoDescription{
+    padding: 10px 20px;
+    border: 2px solid #bf76ff;
+    background-color: #dcb4ff;
+    border-radius: 20px;
+    resize: none;
+}
+#todoPriority{
+    border: 2px solid #bf76ff;
+    padding: 10px 20px;
+    background-color: #dcb4ff;
+    outline: none;
+    border-radius: 20px;
+}
+
+#saveBtn{
+    background-color: #367bf5;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 2rem;
+}
+
+#saveBtn:hover{
+    background-color: #0e66ff;
+}
+
+.saveBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.inpFieldNames{
+    color: gray;
+    font-size: 0.8rem;
+    padding: 8px;
+}
+
+
+/* visibility */
+
+.showPopup{
+    visibility: visible;
+    transform: scale(1);
+    transform: translate(0%, -120%);
+}
+.closePopup{
+    visibility: hidden;
+    transform: scale(0.01);
+    transform: translate(0%, -120%);
+}
+
+.taskList > P{
+    text-align: center;
+    font-weight: 500;
+}
+
+i
+{
+    scale: 2;
+}
+
+/* closing popup */
+#close
+{
+    position: fixed;
+    left: 385px;
+    border-radius: 300%;
+    padding: 10px;
+    top: -10px;
+    border: none;
+    
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
